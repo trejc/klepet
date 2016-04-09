@@ -61,6 +61,14 @@ function filtirirajVulgarneBesede(vhod) {
 $(document).ready(function() {
   var klepetApp = new Klepet(socket);
 
+  socket.on('dregljaj', function(dregljaj) {
+    $('#vsebina').jrumble();
+    $('#vsebina').trigger('startRumble');
+    setTimeout(function() {
+      $('#vsebina').trigger('stopRumble');
+    }, 1500);
+  });
+
   socket.on('vzdevekSpremembaOdgovor', function(rezultat) {
     var sporocilo;
     if (rezultat.uspesno) {
@@ -123,8 +131,6 @@ $(document).ready(function() {
     procesirajVnosUporabnika(klepetApp, socket);
     return false;
   });
-  
-  
 });
 
 function dodajSlike(vhodnoBesedilo) {
