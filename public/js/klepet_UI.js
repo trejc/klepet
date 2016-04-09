@@ -99,6 +99,11 @@ $(document).ready(function() {
     for (var i=0; i < uporabniki.length; i++) {
       $('#seznam-uporabnikov').append(divElementEnostavniTekst(uporabniki[i]));
     }
+    
+    $('#seznam-uporabnikov div').click(function() {
+      $('#poslji-sporocilo').val('/vzdevek ' + '\"' + $(this).text() +'\" ');
+      $('#poslji-sporocilo').focus();
+    });
   });
 
   setInterval(function() {
