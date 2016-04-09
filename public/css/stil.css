@@ -12,6 +12,12 @@ a {
   margin-left: 20px;
 }
 
+.frame {
+  width: 200px;
+  height: 150px;
+  margin-left: 20;
+}
+
 #vsebina {
   width: 100%;
   margin-left: auto;
