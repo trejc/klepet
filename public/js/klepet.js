@@ -47,9 +47,8 @@ Klepet.prototype.procesirajUkaz = function(ukaz) {
       besede.shift();
       var prejemnik = besede.join(' ');
       if(prejemnik) {
-        var dregljaj = {vzdevek:prejemnik};
-        this.socket.emit('dregljaj', dregljaj);
-        sporocilo = 'Dregljaj za ' + dregljaj.vzdevek;
+        this.socket.emit('dregljaj', {vzdevek:prejemnik});
+        sporocilo = 'Dregljaj za ' + prejemnik;
       }else {
         sporocilo = 'Neznan ukaz';
       }
